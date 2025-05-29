@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy & Terms - Advanced Language & Computer School</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Theme Variables */
+        :root {
+            /* Light Theme (Default) */
+            --bg-primary: #fff;
+            --bg-secondary: #f8fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #718096;
+            --accent-color: #4a6cf7;
+            --accent-light: rgba(74, 108, 247, 0.1);
+            --border-color: #e2e8f0;
+            --card-bg: #fff;
+            --card-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            --footer-bg: #2d3748;
+            --footer-text: #e2e8f0;
+            --footer-secondary: #a0aec0;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --header-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --bottom-nav-bg: #fff;
+            --bottom-nav-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark Theme */
+        html[data-theme='dark'] {
+            --bg-primary: #1a202c;
+            --bg-secondary: #2d3748;
+            --text-primary: #f7fafc;
+            --text-secondary: #cbd5e0;
+            --accent-color: #5a78ff;
+            --accent-light: rgba(90, 120, 255, 0.2);
+            --border-color: #4a5568;
+            --card-bg: #2d3748;
+            --card-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            --footer-bg: #171923;
+            --footer-text: #e2e8f0;
+            --footer-secondary: #a0aec0;
+            --header-bg: rgba(26, 32, 44, 0.95);
+            --header-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            --bottom-nav-bg: #1a202c;
+            --bottom-nav-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-color);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--accent-color);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: -10px;
+            left: 25%;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            color: var(--accent-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 20px;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .theme-toggle i {
+            font-size: 18px;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--header-bg);
+            box-shadow: var(--header-shadow);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            background: var(--header-bg);
+            box-shadow: var(--header-shadow);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s ease;
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent-light), var(--accent-light));
+            top: -100px;
+            right: -100px;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent-light), var(--accent-light));
+            bottom: -100px;
+            left: -100px;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Tab Navigation */
+        .tab-navigation {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tab-btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: var(--accent-color);
+        }
+
+        .tab-btn.active::after {
+            width: 100%;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Policy Content Styles */
+        .policy-content {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+        }
+
+        .policy-section {
+            margin-bottom: 40px;
+        }
+
+        .policy-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .policy-section h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: 0;
+            left: 0;
+        }
+
+        .policy-section p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .policy-section ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        .policy-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .policy-section a {
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .policy-section a:hover {
+            text-decoration: underline;
+        }
+
+        .last-updated {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-top: 30px;
+            text-align: right;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--bottom-nav-bg);
+            box-shadow: var(--bottom-nav-shadow);
+            z-index: 999;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .bottom-nav-links {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .bottom-nav-item {
+            text-align: center;
+        }
+
+        .bottom-nav-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .bottom-nav-icon i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .bottom-nav-icon span {
+            font-size: 12px;
+        }
+
+        .bottom-nav-icon:hover,
+        .bottom-nav-icon.active {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 60px 0 100px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--accent-color);
+        }
+
+        .footer-text {
+            color: var(--footer-secondary);
+            margin-bottom: 20px;
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: var(--accent-color);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--footer-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #4a5568;
+            color: var(--footer-secondary);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .policy-content {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 250px;
+                height: 100vh;
+                background: var(--bg-primary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                z-index: 1001;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                font-size: 24px;
+            }
+
+            .hero {
+                text-align: center;
+                padding-top: 80px;
+                height: auto;
+                min-height: 30vh;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .tab-btn {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+
+            .policy-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+            }
+
+            .tab-navigation {
+                flex-direction: column;
+                border-bottom: none;
+            }
+
+            .tab-btn {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .tab-btn::after {
+                display: none;
+            }
+
+            .tab-btn.active {
+                background: var(--accent-light);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">Advanced<span>.</span></a>
+                <ul class="nav-links">
+                    <li><a href="advanced.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="advanced.html#contact">Contact</a></li>
+                </ul>
+                <div class="header-right">
+                    <div class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="privacy-hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Privacy Policy & <span>Terms</span></h1>
+                <p>Important information about your rights and our responsibilities</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy & Terms Section -->
+    <section id="privacy-terms" class="privacy-terms visible">
+        <div class="container">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="privacy">Privacy Policy</button>
+                <button class="tab-btn" data-tab="terms">Terms & Conditions</button>
+            </div>
+
+            <!-- Privacy Policy Tab -->
+            <div id="privacy" class="tab-content active">
+                <div class="policy-content">
+                    <div class="policy-section">
+                        <h3>1. Introduction</h3>
+                        <p>Welcome to Advanced Language & Computer School. We respect your privacy and are committed to
+                            protecting your personal data. This privacy policy will inform you about how we look after
+                            your personal data when you visit our website and tell you about your privacy rights and how
+                            the law protects you.</p>
+                        <p>This privacy policy aims to give you information on how Advanced Language & Computer School
+                            collects and processes your personal data through your use of this website, including any
+                            data you may provide through this website when you sign up for our courses, subscribe to our
+                            newsletter, or take part in any other services we offer.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>2. Information We Collect</h3>
+                        <p>We may collect, use, store and transfer different kinds of personal data about you which we
+                            have grouped together as follows:</p>
+                        <ul>
+                            <li><strong>Identity Data</strong> includes first name, last name, username or similar
+                                identifier, date of birth, and gender.</li>
+                            <li><strong>Contact Data</strong> includes billing address, delivery address, email address,
+                                and telephone numbers.</li>
+                            <li><strong>Financial Data</strong> includes bank account and payment card details.</li>
+                            <li><strong>Transaction Data</strong> includes details about payments to and from you and
+                                other details of products and services you have purchased from us.</li>
+                            <li><strong>Technical Data</strong> includes internet protocol (IP) address, your login
+                                data, browser type and version, time zone setting and location, browser plug-in types
+                                and versions, operating system and platform, and other technology on the devices you use
+                                to access this website.</li>
+                            <li><strong>Profile Data</strong> includes your username and password, purchases or orders
+                                made by you, your interests, preferences, feedback, and survey responses.</li>
+                            <li><strong>Usage Data</strong> includes information about how you use our website,
+                                products, and services.</li>
+                            <li><strong>Marketing and Communications Data</strong> includes your preferences in
+                                receiving marketing from us and our third parties and your communication preferences.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>3. How We Use Your Information</h3>
+                        <p>We will only use your personal data when the law allows us to. Most commonly, we will use
+                            your personal data in the following circumstances:</p>
+                        <ul>
+                            <li>Where we need to perform the contract we are about to enter into or have entered into
+                                with you.</li>
+                            <li>Where it is necessary for our legitimate interests (or those of a third party) and your
+                                interests and fundamental rights do not override those interests.</li>
+                            <li>Where we need to comply with a legal obligation.</li>
+                        </ul>
+                        <p>Generally, we do not rely on consent as a legal basis for processing your personal data
+                            although we will get your consent before sending third party direct marketing communications
+                            to you via email or text message. You have the right to withdraw consent to marketing at any
+                            time by contacting us.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>4. Data Security</h3>
+                        <p>We have put in place appropriate security measures to prevent your personal data from being
+                            accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In
+                            addition, we limit access to your personal data to those employees, agents, contractors and
+                            other third parties who have a business need to know. They will only process your personal
+                            data on our instructions and they are subject to a duty of confidentiality.</p>
+                        <p>We have put in place procedures to deal with any suspected personal data breach and will
+                            notify you and any applicable regulator of a breach where we are legally required to do so.
+                        </p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>5. Cookies</h3>
+                        <p>Our website uses cookies to distinguish you from other users of our website. This helps us to
+                            provide you with a good experience when you browse our website and also allows us to improve
+                            our site.</p>
+                        <p>A cookie is a small file of letters and numbers that we store on your browser or the hard
+                            drive of your computer if you agree. Cookies contain information that is transferred to your
+                            computer's hard drive.</p>
+                        <p>You can set your browser to refuse all or some browser cookies, or to alert you when websites
+                            set or access cookies. If you disable or refuse cookies, please note that some parts of this
+                            website may become inaccessible or not function properly.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>6. Third-Party Services</h3>
+                        <p>Our website may include links to third-party websites, plug-ins, and applications. Clicking
+                            on those links or enabling those connections may allow third parties to collect or share
+                            data about you. We do not control these third-party websites and are not responsible for
+                            their privacy statements. When you leave our website, we encourage you to read the privacy
+                            policy of every website you visit.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>7. Your Legal Rights</h3>
+                        <p>Under certain circumstances, you have rights under data protection laws in relation to your
+                            personal data, including the right to:</p>
+                        <ul>
+                            <li>Request access to your personal data.</li>
+                            <li>Request correction of your personal data.</li>
+                            <li>Request erasure of your personal data.</li>
+                            <li>Object to processing of your personal data.</li>
+                            <li>Request restriction of processing your personal data.</li>
+                            <li>Request transfer of your personal data.</li>
+                            <li>Right to withdraw consent.</li>
+                        </ul>
+                        <p>If you wish to exercise any of the rights set out above, please contact us.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>8. Changes to This Privacy Policy</h3>
+                        <p>We may update our privacy policy from time to time. We will notify you of any changes by
+                            posting the new privacy policy on this page and updating the "Last Updated" date at the
+                            bottom of this policy.</p>
+                        <p>You are advised to review this privacy policy periodically for any changes. Changes to this
+                            privacy policy are effective when they are posted on this page.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>9. Contact Us</h3>
+                        <p>If you have any questions about this privacy policy or our privacy practices, please contact
+                            us at:</p>
+                        <p>Email: privacy@advancedschool.com</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                        <p>Address: 123 Education Street, Tech City, TC 12345</p>
+                    </div>
+
+                    <p class="last-updated">Last Updated: May 4, 2023</p>
+                </div>
+            </div>
+
+            <!-- Terms & Conditions Tab -->
+            <div id="terms" class="tab-content">
+                <div class="policy-content">
+                    <div class="policy-section">
+                        <h3>1. Introduction</h3>
+                        <p>These terms and conditions outline the rules and regulations for the use of Advanced Language
+                            & Computer School's website and services.</p>
+                        <p>By accessing this website, we assume you accept these terms and conditions in full. Do not
+                            continue to use Advanced Language & Computer School's website if you do not accept all of
+                            the terms and conditions stated on this page.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>2. User Agreement</h3>
+                        <p>The following terminology applies to these Terms and Conditions, Privacy Statement and
+                            Disclaimer Notice and any or all Agreements: "Client", "You" and "Your" refers to you, the
+                            person accessing this website and accepting the Company's terms and conditions. "The
+                            Company", "Ourselves", "We", "Our" and "Us", refers to Advanced Language & Computer School.
+                            "Party", "Parties", or "Us", refers to both the Client and ourselves, or either the Client
+                            or ourselves.</p>
+                        <p>All terms refer to the offer, acceptance and consideration of payment necessary to undertake
+                            the process of our assistance to the Client in the most appropriate manner, whether by
+                            formal meetings of a fixed duration, or any other means, for the express purpose of meeting
+                            the Client's needs in respect of provision of the Company's stated services/products, in
+                            accordance with and subject to, prevailing law of the United States.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>3. License to Use Website</h3>
+                        <p>Unless otherwise stated, Advanced Language & Computer School and/or its licensors own the
+                            intellectual property rights for all material on this website. All intellectual property
+                            rights are reserved. You may view and/or print pages from the website for your own personal
+                            use subject to restrictions set in these terms and conditions.</p>
+                        <p>You must not:</p>
+                        <ul>
+                            <li>Republish material from this website</li>
+                            <li>Sell, rent or sub-license material from this website</li>
+                            <li>Reproduce, duplicate or copy material from this website</li>
+                            <li>Redistribute content from this website (unless content is specifically made for
+                                redistribution)</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>4. User Responsibilities</h3>
+                        <p>As a user of this website, you agree to:</p>
+                        <ul>
+                            <li>Provide accurate, current, and complete information when registering for our services
+                            </li>
+                            <li>Maintain and promptly update your registration information to keep it accurate, current,
+                                and complete</li>
+                            <li>Be responsible for maintaining the confidentiality of your account and password</li>
+                            <li>Accept responsibility for all activities that occur under your account</li>
+                            <li>Notify us immediately of any unauthorized use of your account or any other breach of
+                                security</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>5. Course Registration and Payment</h3>
+                        <p>By registering for any course offered by Advanced Language & Computer School, you agree to:
+                        </p>
+                        <ul>
+                            <li>Pay all fees associated with the course</li>
+                            <li>Provide accurate payment information</li>
+                            <li>Acknowledge that all course fees are non-refundable unless otherwise specified in our
+                                refund policy</li>
+                            <li>Adhere to the course schedule and requirements</li>
+                        </ul>
+                        <p>We reserve the right to cancel or reschedule courses due to insufficient enrollment,
+                            instructor illness, or other unforeseen circumstances. In such cases, students will be
+                            offered the option to transfer to another course or receive a full refund.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>6. Intellectual Property</h3>
+                        <p>All course materials, including but not limited to text, graphics, logos, images, audio
+                            clips, video clips, and software, are the property of Advanced Language & Computer School or
+                            its content suppliers and are protected by United States and international copyright laws.
+                        </p>
+                        <p>The compilation of all content on this site is the exclusive property of Advanced Language &
+                            Computer School and is protected by United States and international copyright laws. You may
+                            not reproduce, modify, display, sell, or distribute any course materials, or use them for
+                            any other purpose, without prior written permission from Advanced Language & Computer
+                            School.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>7. Limitation of Liability</h3>
+                        <p>In no event shall Advanced Language & Computer School, nor any of its officers, directors,
+                            and employees, be liable to you for anything arising out of or in any way connected with
+                            your use of this website, whether such liability is under contract, tort or otherwise, and
+                            Advanced Language & Computer School, including its officers, directors, and employees shall
+                            not be liable for any indirect, consequential, or special liability arising out of or in any
+                            way related to your use of this website.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>8. Indemnification</h3>
+                        <p>You hereby indemnify to the fullest extent Advanced Language & Computer School from and
+                            against any and all liabilities, costs, demands, causes of action, damages, and expenses
+                            (including reasonable attorney's fees) arising out of or in any way related to your breach
+                            of any of the provisions of these Terms.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>9. Governing Law</h3>
+                        <p>These Terms shall be governed and construed in accordance with the laws of the United States,
+                            without regard to its conflict of law provisions.</p>
+                        <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver
+                            of those rights. If any provision of these Terms is held to be invalid or unenforceable by a
+                            court, the remaining provisions of these Terms will remain in effect.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>10. Termination</h3>
+                        <p>We may terminate or suspend your account and bar access to our services immediately, without
+                            prior notice or liability, under our sole discretion, for any reason whatsoever and without
+                            limitation, including but not limited to a breach of the Terms.</p>
+                        <p>If you wish to terminate your account, you may simply discontinue using our services. All
+                            provisions of the Terms which by their nature should survive termination shall survive
+                            termination, including, without limitation, ownership provisions, warranty disclaimers,
+                            indemnity, and limitations of liability.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>11. Changes to Terms</h3>
+                        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time.
+                            If a revision is material, we will provide at least 30 days' notice prior to any new terms
+                            taking effect. What constitutes a material change will be determined at our sole discretion.
+                        </p>
+                        <p>By continuing to access or use our service after any revisions become effective, you agree to
+                            be bound by the revised terms. If you do not agree to the new terms, you are no longer
+                            authorized to use the service.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h3>12. Contact Us</h3>
+                        <p>If you have any questions about these Terms, please contact us at:</p>
+                        <p>Email: legal@advancedschool.com</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                        <p>Address: 123 Education Street, Tech City, TC 12345</p>
+                    </div>
+
+                    <p class="last-updated">Last Updated: May 4, 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3 class="footer-logo">Advanced<span>.</span></h3>
+                    <p class="footer-text">Advanced is a premier institution offering cutting-edge courses in
+                        programming languages and computer science.</p>
+                </div>
+                <div class="footer-links-container">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="advanced.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="advanced.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-container">
+                    <h3 class="footer-title">Courses</h3>
+                    <ul class="footer-links">
+                        <li><a href="courses/webdev.html">Web Development</a></li>
+                        <li><a href="courses/data.html">Data Science</a></li>
+                        <li><a href="courses/mobile.html">Mobile App Development</a></li>
+                        <li><a href="courses/business.html">Business English</a></li>
+                        <li><a href="courses/technical.html">Technical Writing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-container">
+                    <h3 class="footer-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="privacy.html">Terms & Conditions</a></li>
+                        <li><a href="documentation&sup.html">Documentation</a></li>
+                        <li><a href="documentation&sup.html">Support Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Advanced Language & Computer School. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <div class="bottom-nav-links">
+            <div class="bottom-nav-item">
+                <a href="advanced.html" class="bottom-nav-icon">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+            <div class="bottom-nav-item">
+                <a href="courses.html" class="bottom-nav-icon">
+                    <i class="fas fa-book"></i>
+                    <span>Courses</span>
+                </a>
+            </div>
+            <div class="bottom-nav-item">
+                <a href="about.html" class="bottom-nav-icon">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+            </div>
+            <div class="bottom-nav-item">
+                <a href="advanced.html#contact" class="bottom-nav-icon">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme preference or use device preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Set initial theme
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        } else if (prefersDark) {
+            htmlElement.setAttribute('data-theme', 'dark');
+            updateThemeIcon('dark');
+        }
+
+        // Toggle theme function
+        function toggleTheme() {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        // Update theme icon
+        function updateThemeIcon(theme) {
+            const icon = themeToggle.querySelector('i');
+            if (theme === 'dark') {
+                icon.className = 'fas fa-moon';
+            } else {
+                icon.className = 'fas fa-sun';
+            }
+        }
+
+        // Add event listener to theme toggle button
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Sticky Header
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Tab Navigation
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+
+                // Update active button
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Show active tab content
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === tabId) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Scroll Animation
+        function checkSections() {
+            const sections = document.querySelectorAll('section');
+            const triggerBottom = window.innerHeight * 0.8;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkSections);
+        window.addEventListener('load', checkSections);
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Close mobile menu if open
+                navLinks.classList.remove('active');
+
+                // Update active state in bottom nav
+                if (this.classList.contains('bottom-nav-icon')) {
+                    document.querySelectorAll('.bottom-nav-icon').forEach(icon => {
+                        icon.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize page with first section visible
+        document.querySelector('section').classList.add('visible');
+    </script>
+</body>
+
+</html>
